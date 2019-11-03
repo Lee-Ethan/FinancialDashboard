@@ -16,9 +16,7 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+
         </button>
         <a class="navbar-brand" href="#">
           <font color="Black">Financial Dashboard</font>
@@ -27,154 +25,127 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#"><span class="glyphicon glyphicon-user"></span>
-              <font color="Black"> Sign Up</font>
+              <button id="signUpButton">
+                <font color="Black"> Sign Up</font>
+              </button>
             </a></li>
           <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
-              <font color="Black"> Login</font>
+              <button id="logInButton">
+                <font color="Black"> Login</font>
+              </button>
             </a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="row">
-    <div class="col-6 col-md-6" style="background-color: ">
-      <div class="container">
-        <div class="row">
-          <div class="col-6 col-md-6" style="width: 300px">
-            <div class="income_container" style="background-color: #fff">
-              <canvas id="income" height="10" width="10" style="background-color: #eee"></canvas>
-              <script>
-                new Chart(document.getElementById("income"), {
-                  type: 'pie',
-                  data: {
-                    datasets: [{
-                      label: "Income",
-                      backgroundColor: ["#3e95cd"],
-                      data: [2478]
-                    }],
-                    labels: ["Income"]
 
-                  },
-                  options: {
-                    title: {
-                      display: true,
-                      text: 'Income'
-                    }
-                  }
-                });
-              </script>
-            </div>
-          </div>
-          <div class="col-6 col-md-6" style="width: 300px">
-            <div class="income_container" style="background-color: #fff">
-              <canvas id="expenses" height="10" width="10" style="background-color: #eee"></canvas>
-              <script>
-                new Chart(document.getElementById("expenses"), {
-                  type: 'doughnut',
-                  data: {
-                    datasets: [{
-                      label: "Expenses",
-                      backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9"],
-                      data: [2478, 784, 5267, 734]
-                    }],
-                    labels: ["Amazon Prime", "Hulu", "Netflix", "Car Payment"]
+  <div class="col-6 col-md-6" style="background-color: ">
+    <div class="row">
+      <div class="column" style="width: 300px">
+        <div class="income_container" style="background-color: #fff">
+          <canvas id="income" height="10" width="10" style="background-color: #eee"></canvas>
+          <script>
+            new Chart(document.getElementById("income"), {
+              type: 'pie',
+              data: {
+                datasets: [{
+                  label: "Income",
+                  backgroundColor: ["#3e95cd"],
+                  data: [2478]
+                }],
+                labels: ["Income"]
 
-                  },
-                  options: {
-                    title: {
-                      display: true,
-                      text: 'Expenses'
-                    }
-                  }
-                });
-              </script>
-            </div>
-          </div>
-
-          <!-- Force next columns to break to new line at md breakpoint and up -->
-          <div class="w-100 d-none d-md-block"></div>
-
-          <div class="col-6 col-md-6" style="width: 300px">
-            <div class="tax_container">
-              <canvas id="tax" height="10" width="10" style="background-color: #eee"></canvas>
-              <script>
-                new Chart(document.getElementById("tax"), {
-                  type: 'doughnut',
-                  data: {
-                    datasets: [{
-                      label: "Income Breakdown",
-                      backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                      data: [2478, 784, 5267, 734]
-                    }],
-                    labels: ["Income tax", "Property Tax", "Disposable Income", "State Tax"]
-
-                  },
-                  options: {
-                    title: {
-                      display: true,
-                      text: 'Tax Breakdown'
-                    }
-                  }
-                });
-              </script>
-            </div>
-          </div>
-          <div class="col-6 col-md-6" style="width: 300px">
-            <canvas id="invest" height="10" width="10" style="background-color: #eee"></canvas>
-            <script>
-              new Chart(document.getElementById("invest"), {
-                type: 'bar',
-                data: {
-                  labels: [""],
-                  datasets: [{
-                    label: "Initial Price",
-                    backgroundColor: "#3e95cd",
-                    data: [133]
-                  }, {
-                    label: "Current Price",
-                    backgroundColor: "#8e5ea2",
-                    data: [408]
-                  }]
-                },
-                options: {
-                  title: {
-                    display: true,
-                    text: 'Investments'
-                  }
+              },
+              options: {
+                title: {
+                  display: true,
+                  text: 'Income'
                 }
-              });
-            </script>
-          </div>
+              }
+            });
+          </script>
+        </div>
+      </div>
+      <div class="column">
+        <div class="expenses_container" style="height: 300px">
+          <canvas id="expenses" style="background-color: #eee"></canvas>
+          <script>
+            new Chart(document.getElementById("expenses"), {
+              type: 'doughnut',
+              data: {
+                datasets: [{
+                  label: "Expenses",
+                  backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9"],
+                  data: [12.99, 9.99, 11.99, 450]
+                }],
+                labels: ["Amazon Prime", "Hulu", "Netflix", "Car Payment"]
+
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                  display: true,
+                  text: 'Expenses'
+                }
+              }
+            });
+          </script>
         </div>
       </div>
     </div>
+    <div class="row">
 
-    <div class="col-6 col-md-6" style="background-color: #fff">
-      <div class="networth_container" style="height: 400px">
-        <canvas id="worth" height="100" width="200" style="background-color: #fff"></canvas>
+      <!-- Force next columns to break to new line at md breakpoint and up -->
+      <div class="w-100 d-none d-md-block"></div>
+
+      <div class="column" style="width: 300px">
+        <div class="tax_container">
+          <canvas id="tax" height="10" width="10" style="background-color: #eee"></canvas>
+          <script>
+            new Chart(document.getElementById("tax"), {
+              type: 'doughnut',
+              data: {
+                datasets: [{
+                  label: "Income Breakdown",
+                  backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+                  data: [2478, 784, 5267, 734]
+                }],
+                labels: ["Income tax", "Property Tax", "Disposable Income", "State Tax"]
+
+              },
+              options: {
+                title: {
+                  display: true,
+                  text: 'Tax Breakdown'
+                }
+              }
+            });
+          </script>
+        </div>
+      </div>
+      <div class="column" style="width: 300px">
+        <canvas id="invest" height="10" width="10" style="background-color: #eee"></canvas>
         <script>
-          var ctx = document.getElementById('worth').getContext('2d');
-          var chart = new Chart(ctx, {
-            // The type of chart we want to create
-            type: 'line',
-
-            // The data for our dataset
+          new Chart(document.getElementById("invest"), {
+            type: 'bar',
             data: {
-              labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+              labels: [""],
               datasets: [{
-                label: 'Totoal Net Worth',
-                backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 99, 132)',
-                data: [0, 2, 5, 10, 20, 30, 45]
+                label: "Initial Price",
+                backgroundColor: "#3e95cd",
+                data: [133]
+              }, {
+                label: "Current Price",
+                backgroundColor: "#8e5ea2",
+                data: [408]
               }]
             },
-
-            // Configuration options go here
             options: {
               title: {
                 display: true,
-                text: 'Your Net Worth (Projected)'
+                text: 'Investments'
               }
             }
           });
@@ -182,43 +153,171 @@
       </div>
     </div>
   </div>
-  <div class="row" style="background-color:">
-    <div class="col-6 col-md-6" style="background-color: ">
 
+  <div class="column2">
+    <div class="networth_container">
+      <canvas id="worth" height="100" width="200" style="background-color: #fff"></canvas>
+      <script>
+        var ctx = document.getElementById('worth').getContext('2d');
+        var chart = new Chart(ctx, {
+          // The type of chart we want to create
+          type: 'line',
 
+          // The data for our dataset
+          data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+              label: 'Totoal Net Worth',
+              backgroundColor: 'rgb(255, 99, 132)',
+              borderColor: 'rgb(255, 99, 132)',
+              data: [0, 2, 5, 10, 20, 30, 45]
+            }]
+          },
+
+          // Configuration options go here
+          options: {
+            title: {
+              display: true,
+              text: 'Your Net Worth (Projected)'
+            }
+          }
+        });
+      </script>
     </div>
-    <div class="col-6 col-md-6" style="background-color: ">
+    <div class="row" style="background-color:">
       <div class="budget_container">
-        <canvas id="budget" height="10" width="150" style="background-color: #fff"></canvas>
+        <canvas id="budget" height="20" width="200" style="background-color: #fff"></canvas>
         <script>
           new Chart(document.getElementById("budget"), {
             type: 'horizontalBar',
             data: {
-              labels: ["Budget"],
+              labels: ["Dollars"],
               datasets: [{
                 label: "Monthly Budget",
                 backgroundColor: ["#3e95cd"],
                 data: [75]
               }]
             },
-            var options = {
+            options: {
+              legend: {
+                display: false
+              },
+              title: {
+                display: true,
+                text: 'Monthly Budget'
+              },
               scales: {
-                xAxes: [{
-                  display: true,
-                  ticks: {
-                    suggestedMax: 100, // minimum will be 0, unless there is a lower value.
-                    // OR //
-                    beginAtZero: true // minimum value will be 0.
-                  }
-                }]
-              }
-            };
+        xAxes: [{
+            ticks: {
+                beginAtZero: true,
+                suggestedMax: 100
+            },
+        }]
+    }
+            }
           });
         </script>
       </div>
     </div>
   </div>
 
+
+
 </body>
+<div id="incomeModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>income</p>
+  </div>
+  <script src="incomeModal.js"></script>
+</div>
+
+<div id="expensesModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>expenses</p>
+  </div>
+  <script src="Expenses.js"></script>
+</div>
+
+<div id="expensesModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>expenses</p>
+  </div>
+  <script src="Expenses.js"></script>
+</div>
+
+<div id="expensesModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>expenses</p>
+  </div>
+  <script src="Expenses.js"></script>
+</div>
+
+<div id="logInModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Welcome! To view your personal financial data, please sign in</p>
+    <form action="action_page.php" method="post">
+      <div class="imgcontainer">
+        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit">Login</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+  </div>
+  <script src="logInModal.js"></script>
+</div>
+
+<div id="signUpModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Welcome! To start viewing your financial data, please register an account.</p>
+    <form action="action_page.php" method="post">
+      <div class="imgcontainer">
+        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <button type="submit">Login</button>
+      </div>
+
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+      </div>
+    </form>
+  </div>
+  <script src="signUpModal.js"></script>
+</div>
+
+
 
 </html>
