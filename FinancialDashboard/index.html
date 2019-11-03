@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="style.css">
+<style>
+</style>
+</head>
+<body>
+<!--
+<h2>List View or Grid View</h2>
+
+<p>Click on a button to choose list view or grid view.</p>
+
+<div id="btnContainer">
+  <button class="btn" onclick="listView()"><i class="fa fa-bars"></i> List</button> 
+  <button class="btn active" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+</div>
+-->
+<br>
+<div class = "box">
+    <div class = "row">
+        <div class="column" style="background-color:#aaa;">
+            <h2>Your Income</h2>
+            <p>$100</p>
+            <button class = "button" id="incomeButton">More Details</button>
+        </div>
+        <div class="column" style="background-color:#bbb;">
+            <h2>Your Expenses</h2>
+            <p>Estimated for the month: $30</p>
+            <p>Expenses so far: $25</p>
+            <button class = "button" id="expensesButton">More Details</button>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="column" style="background-color:#ccc;">
+            <h2>Your Investments</h2>
+            <p>NASDAQ</p>
+            <button class = "button" id="investButton">More Details</button>
+        </div>
+        <div class="column" style="background-color:#ddd;">
+            <h2>Your Taxes</h2>
+            <p>Tax</p>
+            <button class = "button" id="taxButton">More Details</button>
+        </div>
+    </div>
+
+</div>
+
+<div class="column" style="background-color:#bbb; height: 400px;">
+    <h2>Your Net Worth (Projected)</h2>
+    <p>Insert Graph</p>
+    <button id="netWorthButton">More Details</button>
+</div>
+
+<div class="row">
+    <div class="column2" style="background-color:#ccc;">
+        <h2>Your Budget</h2>
+        <p>You have $25 left for the month</p>
+        <button class = "button" id="budgetButton">More Details</button>
+    </div>
+    <div class="column2" style="background-color:#ddd;">
+        <h2>Your Savings For The Month</h2>
+        <p>Tax</p>
+        
+        <button id="savingsButton">More Details</button>
+        
+    </div>
+</div>  
+
+<div id="content">
+  <p>This is the content-container</p>
+  <a href="#modal1">Open first modal</a><br>
+  <a href="#modal2">Open second modal</a>
+  <div id="modal1" class = "modal"><a href="#">Close</a><div class="modal-content">This is the first modal</div></div>
+  <div id="modal2" class = "modal"><a href="#">Close</a><div class="modal-content">This is the second modal</div></div>
+</div>
+
+
+
+<div id="incomeModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>income</p>
+  </div>
+  <script src = "incomeModal.js"></script>
+</div>
+
+<div id="savingsModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>savings</p>
+  </div>
+  <script src = "savingsModal.js"></script>
+</div>
+
+<div id="investModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>invest</p>
+  </div>
+  <script src = "investModal.js"></script>
+</div>
+
+<div id="budgetModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>budget</p>
+  </div>
+  <script src = "budgetModal.js"></script>
+</div>
+
+<div id="expensesModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>expenses</p>
+  </div>
+  <script src = "expensesModal.js"></script>
+</div>
+
+<div id="netWorthModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>net Worth</p>
+  </div>
+  <script src = "netWorthModal.js"></script>
+</div>
+
+<script>
+// Get the elements with class="column"
+var elements = document.getElementsByClassName("column");
+
+// Declare a loop variable
+var i;
+
+// List View
+function listView() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.width = "100%";
+  }
+}
+
+// Grid View
+function gridView() {
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.width = "50%";
+  }
+}
+
+</script>
+
+</body>
+</html>
